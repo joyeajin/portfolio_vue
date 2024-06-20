@@ -21,7 +21,7 @@
           <div>effort</div> -->
         </div>
         <div class="img">
-          <img src="@/assets/img/about.png" alt="어바웃" />
+          <img src="@/assets/img/images_dog.jpg" alt="어바웃" />
         </div>
       </div>
       <div class="intro__lines bottom" aria-hidden="true">
