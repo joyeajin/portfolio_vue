@@ -16,8 +16,8 @@
           </div>
           <h3 class="title">{{ site.title }}</h3>
           <div class="btn">
-            <a href="{{site.code}}">code</a>
-            <a href="{{site.view}}">view</a>
+            <a :href="site.code">code</a>
+            <a :href="site.view">view</a>
           </div>
           <div class="info">
             <span>{{ site.info[0] }}</span>

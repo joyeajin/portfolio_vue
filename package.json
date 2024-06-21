@@ -10,6 +10,7 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "core-js": "^3.8.3",
+    "gsap": "^3.12.5",
     "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
     "vue": "^3.2.13",
