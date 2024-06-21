@@ -4,7 +4,7 @@
       <div class="port__title">portfolio <em>포폴 작업물</em></div>
       <div class="port__wrap">
         <article
-          v-for="(port, index) in portText"
+          v-for="(port, index) in reversedPorts"
           :key="index"
           class="port__item"
           :class="`p${index + 1}`"
@@ -14,9 +14,9 @@
             <img :src="port.img" :alt="port.name" />
           </a>
           <h3 class="title">{{ port.title }}</h3>
-          <p class="desc">
+          <!-- <p class="desc">
             {{ port.desc }}
-          </p>
+          </p> -->
           <a :href="port.view" target="_blank" class="site">사이트 보기</a>
         </article>
       </div>
@@ -39,6 +39,11 @@ export default {
   },
   mounted() {
     this.initGsapAnimation();
+  },
+  computed: {
+    reversedPorts() {
+      return [...this.portText].reverse();
+    },
   },
   methods: {
     initGsapAnimation() {
@@ -97,7 +102,7 @@ export default {
 
     .port__item {
       width: 500px;
-      height: 70vh;
+      height: 56vh;
       background-color: var(--subBg100);
       padding: 2.5rem;
       margin-right: 20px;
@@ -145,6 +150,7 @@ export default {
           border-radius: 5px;
           filter: saturate(0%);
           transition: all 0.3s;
+          height: 292px;
         }
 
         &:hover {

@@ -13,7 +13,7 @@
       >
         <ul>
           <li v-for="(nav, index) in this.headerNav" :key="index">
-            <a :href="nav.url">{{ nav.title }}</a>
+            <a :href="nav.url" @click="scrollLink($event)">{{ nav.title }}</a>
           </li>
           <!-- <li><a href="#intro">intro</a></li>
           <li><a href="#skill">skill</a></li>
@@ -49,6 +49,15 @@ export default {
   methods: {
     toggleMobileMenu() {
       this.isNavVisible = !this.isNavVisible;
+    },
+    scrollLink(event) {
+      event.preventDefault();
+      const targetId = event.target.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
     },
   },
 };

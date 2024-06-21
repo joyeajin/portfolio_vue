@@ -21,6 +21,7 @@ import SiteSection from "@/components/SiteSection.vue";
 import PortSection from "@/components/PortSection.vue";
 import ContactSection from "@/components/ContactSection.vue";
 import SkipSection from "@/components/SkipSection.vue";
+import Lenis from "@studio-freight/lenis";
 
 export default {
   name: "App",
@@ -33,6 +34,31 @@ export default {
     SiteSection,
     PortSection,
     ContactSection,
+  },
+  mounted() {
+    this.scrollAnimation();
+  },
+  methods: {
+    scrollAnimation() {
+      const lenis = new Lenis({
+        duration: 1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
+    },
   },
 };
 </script>
