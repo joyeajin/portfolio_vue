@@ -202,3 +202,16 @@ export const contactText = [
     title: "mail : dpwls3334@naver.com",
   },
 ];
+
+export const footerText = [
+  {
+    title: "github",
+    desc: "깃헙에 오시면 더 많은 소스를 볼 수 있습니다.",
+    link: "https://github.com/joyeajin",
+  },
+  {
+    title: "notion",
+    desc: "노션에 오시면 더 많은 정보를 볼 수 있습니다.",
+    link: "https://bouncy-skiff-afc.notion.site/51d9fffd6d3f4b198084970ac92250b2?pvs=4",
+  },
+];
